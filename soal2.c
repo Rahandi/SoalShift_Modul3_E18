@@ -167,12 +167,18 @@ void* pemainkedua(){
 				status=2;
 				break;
 			}
+			system("clear");
+			printf("[SCORE]\n");
+			printf("%s: %d\n", namesatu, scoresatu);
+			printf("%s: %d\n", namedua, scoredua);
+			printf("Klik tombol apapun untuk melanjutkan...\n");
+			getchar();
 			b = 1;
 			giliran = 1;
 		}
 	}
 }
-}
+
 
 int main(){
 
