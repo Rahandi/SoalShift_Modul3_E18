@@ -29,7 +29,7 @@ void* pemainpertama(){
 				getchar();
 				continue;
 			}
-			system("clear")
+			system("clear");
 			printf("lubang yang sudah berisi ranjau: ");
 			for(a=0;a<16;a++){
 				if(ranjaupertama[a] == 1){
@@ -58,7 +58,7 @@ void* pemainpertama(){
 			giliran = 2;
 		}
 		else if(b==2){
-			printf("%s silahkan tebak ranjau di 4 lubang (1-16)\n");
+			printf("%s silahkan tebak ranjau di 4 lubang (1-16)\n", namesatu);
 			for(a=0;a<4;a++){
 				scanf("%d", &e[a]);
 				e[a] = e[a] - 1;
@@ -112,7 +112,7 @@ void* pemainkedua(){
 				getchar();
 				continue;
 			}
-			system("clear")
+			system("clear");
 			printf("lubang yang sudah berisi ranjau: ");
 			for(a=0;a<16;a++){
 				if(ranjaukedua[a] == 1){
@@ -141,7 +141,7 @@ void* pemainkedua(){
 			giliran = 1;
 		}
 		else if(b==2){
-			printf("%s silahkan tebak ranjau di 4 lubang (1-16)\n");
+			printf("%s silahkan tebak ranjau di 4 lubang (1-16)\n", namedua);
 			for(a=0;a<4;a++){
 				scanf("%d", &e[a]);
 				e[a] = e[a] - 1;
@@ -189,12 +189,12 @@ int main(){
 		if(status == 1){
 			system("clear");
 			printf("%s menang\n", namesatu);
-			return;
+			return 0;
 		}
 		else if(status == 2){
 			system("clear");
 			printf("%s menang\n", namedua);
-			return;
+			return 0;
 		}
 	}
 }
