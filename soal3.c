@@ -7,7 +7,13 @@ pthread_t thread_lohan, tread_kepiting;
 int status_lohan=100, status_kepiting=100, signal=0;
 
 void* fungsi_lohan(){
-
+	while(1){
+		status_lohan-=15;
+		if(status_lohan > 100 || status_lohan <= 0){
+			signal=1;
+		}
+		sleep(10)
+	}
 }
 
 void* fungsi_kepiting(){
