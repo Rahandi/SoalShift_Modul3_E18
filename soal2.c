@@ -20,6 +20,7 @@ void* pemainpertama(){
 			scanf("%[^\n]s", namesatu);
 			b=1;
 			giliran = 2;
+			continue;
 		}
 		else if(b==1){
 			printf("%s silahkan pasang ranjau\n", namesatu);
@@ -57,6 +58,7 @@ void* pemainpertama(){
 			}
 			b = 2;
 			giliran = 2;
+			continue;
 		}
 		else if(b==2){
 			printf("%s silahkan tebak ranjau di 4 lubang (1-16)\n", namesatu);
@@ -87,6 +89,7 @@ void* pemainpertama(){
 			}
 			b = 1;
 			giliran = 2;
+			continue;
 		}
 	}
 }
@@ -104,6 +107,7 @@ void* pemainkedua(){
 			scanf("%[^\n]s", namedua);
 			b=1;
 			giliran = 1;
+			continue;
 		}
 		else if(b==1){
 			printf("%s silahkan pasang ranjau\n", namedua);
@@ -141,6 +145,7 @@ void* pemainkedua(){
 			}
 			b = 2;
 			giliran = 1;
+			continue;
 		}
 		else if(b==2){
 			printf("%s silahkan tebak ranjau di 4 lubang (1-16)\n", namedua);
@@ -177,6 +182,7 @@ void* pemainkedua(){
 			getchar();
 			b = 1;
 			giliran = 1;
+			continue;
 		}
 	}
 }
