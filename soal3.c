@@ -8,7 +8,7 @@ int status_lohan=100, status_kepiting=100, signal=0;
 
 void* fungsi_lohan(){
 	while(1){
-		sleep(10)
+		sleep(10);
 		status_lohan-=15;
 		if(status_lohan > 100 || status_lohan <= 0){
 			signal = 1;
@@ -19,7 +19,7 @@ void* fungsi_lohan(){
 
 void* fungsi_kepiting(){
 	while(1){
-		sleep(20)
+		sleep(20);
 		status_kepiting-=10;
 		if(status_kepiting > 100 || status_kepiting <= 0){
 			signal = 1;
@@ -33,7 +33,7 @@ void* ambil_input(){
 	while(1){
 		printf("1.Beri makan lohan\n2.Beri makan kepiting\npilihan = ");
 		scanf("%d", &pilihan);
-		system("clear")
+		system("clear");
 		if(pilihan == 1){
 			status_lohan += 10;
 			if(status_lohan > 100 || status_lohan <= 0){
