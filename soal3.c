@@ -49,7 +49,7 @@ void* ambil_input(){
 			}
 		}
 		else if(pilihan == 3){
-			printf("Lohan: %d\nKepiting: %d", status_lohan, status_kepiting);
+			printf("Lohan: %d\nKepiting: %d\n", status_lohan, status_kepiting);
 		}
 	}
 }
@@ -62,12 +62,9 @@ int main(){
 
 	while(1){
 		if(signal==1){
-			printf("GAME OVER");
+			system("clear");
+			printf("GAME OVER\n");
 			return 0;
 		}
 	}
-
-	pthread_join(thread_lohan, NULL);
-	pthread_join(thread_kepiting, NULL);
-	pthread_join(thread_input, NULL);
 }
