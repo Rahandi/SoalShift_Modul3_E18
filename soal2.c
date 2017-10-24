@@ -80,10 +80,14 @@ void* pemainpertama(){
 			}
 			for(a=0;a<4;a++){
 				for(c=0;c<4;c++){
+					if(a == c){
+						continue;
+					}
 					if(e[a] == e[c]){
 						printf("tidak boleh memilih lubang yang sama");
-						getchar;
-						getchar;
+						getchar();
+						getchar();
+						system("clear");
 						goto TEBAKRANJAUPERTAMA;
 					}
 				}
@@ -178,15 +182,20 @@ void* pemainkedua(){
 					printf("lubang melebihi batas, ulangi lagi\n");
 					getchar();
 					getchar();
+					system("clear");
 					goto TEBAKRANJAUKEDUA;
 				}
 			}
 			for(a=0;a<4;a++){
 				for(c=0;c<4;c++){
+					if(a==c){
+						continue;
+					}
 					if(e[a] == e[c]){
 						printf("tidak boleh memilih lubang yang sama");
-						getchar;
-						getchar;
+						getchar();
+						getchar();
+						system("clear");
 						goto TEBAKRANJAUKEDUA;
 					}
 				}
