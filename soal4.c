@@ -55,7 +55,21 @@ int main(int argc, char *argv[])
       input_val[i] = atoi(argv[i]);
    }
 
-   sort(argc, input_val);
+   //sorting
+   int temp;
+   for (i=1; i<argc; i++)
+   {
+      for (j=1; j<argc; j++)
+      {
+          if(input_val[j-1] >= input_val[j])                                
+          {
+             temp = input_val[j-1];                                    
+             input_val[j-1] = input_val[j];                                 
+             input_val[j] = temp;                                      
+          }    
+      }
+   }
+
    fakto(input_val, argc);
 
 }
