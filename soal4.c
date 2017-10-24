@@ -3,23 +3,6 @@
 #include <pthread.h>
 #include <unistd.h>
 
-void sort(int n, int argv[])
-{
-   int i, j, temp;
-   for (i=1; i<n; i++)
-   {
-      for (j=1; j<n; j++)
-      {
-          if(argv[j-1] >= argv[j])                                
-          {
-             temp = argv[j-1];                                    
-             argv[j-1] = argv[j];                                 
-             argv[j] = temp;                                      
-          }    
-      }
-   }
-}
-
 void fakto(int input_val[], int argc)
 {
    int i, j;
