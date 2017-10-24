@@ -31,7 +31,7 @@ void* fungsi_kepiting(){
 void* ambil_input(){
 	int pilihan;
 	while(1){
-		printf("1.Beri makan lohan\n2.Beri makan kepiting\n3.Tampilkan status\npilihan = ");
+		printf("1.Beri makan lohan\n2.Beri makan kepiting\npilihan = ");
 		scanf("%d", &pilihan);
 		system("clear");
 		if(pilihan == 1){
@@ -47,9 +47,6 @@ void* ambil_input(){
 				signal = 1;
 				break;
 			}
-		}
-		else if(pilihan == 3){
-			printf("Lohan: %d\nKepiting: %d\n", status_lohan, status_kepiting);
 		}
 	}
 }
