@@ -11,7 +11,13 @@ void* fungsi_lohan(){
 }
 
 void* fungsi_kepiting(){
-
+	while(1){
+		status_kepiting-=10;
+		if(status_kepiting > 100 || status_kepiting <= 0){
+			signal = 1;
+		}
+		sleep(20)
+	}
 }
 
 void* ambil_input(){
