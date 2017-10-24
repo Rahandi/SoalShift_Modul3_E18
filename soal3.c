@@ -31,7 +31,7 @@ void* fungsi_kepiting(){
 void* ambil_input(){
 	int pilihan;
 	while(1){
-		printf("1.Beri makan lohan\n2.Beri makan kepiting\npilihan = ");
+		printf("1.Beri makan lohan\n2.Beri makan kepiting\n3.Tampilkan status\npilihan = ");
 		scanf("%d", &pilihan);
 		system("clear");
 		if(pilihan == 1){
@@ -48,6 +48,9 @@ void* ambil_input(){
 				break;
 			}
 		}
+		else if(pilihan == 3){
+			printf("Lohan: %d\nKepiting: %d", status_lohan, status_kepiting);
+		}
 	}
 }
 
@@ -60,7 +63,7 @@ int main(){
 	while(1){
 		if(signal==1){
 			printf("GAME OVER");
-			break;
+			return 0;
 		}
 	}
 
