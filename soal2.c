@@ -29,8 +29,10 @@ void* pemainpertama(){
 			if(c>4){
 				printf("terlalu banyak ranjau yang dipasang, ulangi lagi\n");
 				getchar();
+				getchar();
 				continue;
 			}
+			PASANGRANJAUPERTAMA:
 			system("clear");
 			printf("lubang yang sudah berisi ranjau: ");
 			for(a=0;a<16;a++){
@@ -45,7 +47,8 @@ void* pemainpertama(){
 				if(d>=16){
 					printf("lubang yang dimasukkan melebihi batas, ulangi lagi\n");
 					getchar();
-					continue;
+					getchar();
+					goto PASANGRANJAUPERTAMA;
 				}
 				if(ranjaupertama[d] != 1){
 					ranjaupertama[d] = 1;
@@ -53,7 +56,8 @@ void* pemainpertama(){
 				else{
 					printf("ranjau tidak bisa diinputkan ke tempat yang sama, ulangi lagi\n");
 					getchar();
-					continue;
+					getchar();
+					goto PASANGRANJAUPERTAMA;
 				}
 			}
 			b = 2;
@@ -61,6 +65,7 @@ void* pemainpertama(){
 			continue;
 		}
 		else if(b==2){
+			TEBAKRANJAUPERTAMA:
 			printf("%s silahkan tebak ranjau di 4 lubang (1-16)\n", namesatu);
 			for(a=0;a<4;a++){
 				scanf("%d", &e[a]);
@@ -68,7 +73,19 @@ void* pemainpertama(){
 				if(e[a] >= 16){
 					printf("lubang melebihi batas, ulangi lagi\n");
 					getchar();
-					continue;
+					getchar();
+					system("clear");
+					goto TEBAKRANJAUPERTAMA;
+				}
+			}
+			for(a=0;a<4;a++){
+				for(c=0;c<4;c++){
+					if(e[a] == e[c]){
+						printf("tidak boleh memilih lubang yang sama");
+						getchar;
+						getchar;
+						goto TEBAKRANJAUPERTAMA;
+					}
 				}
 			}
 			for(a=0;a<4;a++){
@@ -116,8 +133,10 @@ void* pemainkedua(){
 			if(c>4){
 				printf("terlalu banyak ranjau yang dipasang, ulangi lagi\n");
 				getchar();
+				getchar();
 				continue;
 			}
+			PASANGRANJAUKEDUA:
 			system("clear");
 			printf("lubang yang sudah berisi ranjau: ");
 			for(a=0;a<16;a++){
@@ -132,7 +151,8 @@ void* pemainkedua(){
 				if(d>=16){
 					printf("lubang yang dimasukkan melebihi batas, ulangi lagi\n");
 					getchar();
-					continue;
+					getchar();
+					goto PASANGRANJAUKEDUA;
 				}
 				if(ranjaukedua[d] != 1){
 					ranjaukedua[d] = 1;
@@ -140,7 +160,8 @@ void* pemainkedua(){
 				else{
 					printf("ranjau tidak bisa diinputkan ke tempat yang sama, ulangi lagi\n");
 					getchar();
-					continue;
+					getchar();
+					goto PASANGRANJAUKEDUA;
 				}
 			}
 			b = 2;
@@ -148,6 +169,7 @@ void* pemainkedua(){
 			continue;
 		}
 		else if(b==2){
+			TEBAKRANJAUKEDUA:
 			printf("%s silahkan tebak ranjau di 4 lubang (1-16)\n", namedua);
 			for(a=0;a<4;a++){
 				scanf("%d", &e[a]);
@@ -155,7 +177,18 @@ void* pemainkedua(){
 				if(e[a] >= 16){
 					printf("lubang melebihi batas, ulangi lagi\n");
 					getchar();
-					continue;
+					getchar();
+					goto TEBAKRANJAUKEDUA;
+				}
+			}
+			for(a=0;a<4;a++){
+				for(c=0;c<4;c++){
+					if(e[a] == e[c]){
+						printf("tidak boleh memilih lubang yang sama");
+						getchar;
+						getchar;
+						goto TEBAKRANJAUKEDUA;
+					}
 				}
 			}
 			for(a=0;a<4;a++){
@@ -180,6 +213,7 @@ void* pemainkedua(){
 			printf("%s: %d\n", namedua, scoredua);
 			printf("Klik tombol apapun untuk melanjutkan...\n");
 			getchar();
+			getchar();
 			b = 1;
 			giliran = 1;
 			continue;
@@ -196,12 +230,18 @@ int main(){
 	while(1){
 		if(status == 1){
 			system("clear");
-			printf("%s menang\n", namesatu);
+			printf("%s menang\n\n", namesatu);
+			printf("[SCORE]\n");
+			printf("%s: %d\n", namesatu, scoresatu);
+			printf("%s: %d\n", namedua, scoredua);
 			return 0;
 		}
 		else if(status == 2){
 			system("clear");
-			printf("%s menang\n", namedua);
+			printf("%s menang\n\n", namedua);
+			printf("[SCORE]\n");
+			printf("%s: %d\n", namesatu, scoresatu);
+			printf("%s: %d\n", namedua, scoredua);
 			return 0;
 		}
 	}
