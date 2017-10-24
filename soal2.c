@@ -19,6 +19,7 @@ void* pemainpertama(){
 			printf("Nama pemain pertama:\n");
 			scanf("%[^\n]s", namesatu);
 			b=1;
+			giliran = 2;
 		}
 		else if(b==1){
 			printf("%s silahkan pasang ranjau\n", namesatu);
@@ -102,6 +103,7 @@ void* pemainkedua(){
 			printf("Nama pemain kedua:\n");
 			scanf("%[^\n]s", namedua);
 			b=1;
+			giliran = 1;
 		}
 		else if(b==1){
 			printf("%s silahkan pasang ranjau\n", namedua);
