@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <pthread.h>
+#include <unistd.h>
 
 void sort(int n, int argv[])
 {
@@ -17,6 +19,23 @@ void sort(int n, int argv[])
       }
    }
 }
+
+void fakto(int input_val[], int argc)
+{
+   int i, j;
+   //menghitung fakto
+   for (i=1; i<argc; i++)
+   {
+      int hasil = 1;
+      for (j=input_val[i]; j>1; j--)
+      {
+         hasil = hasil * j;
+      }
+      printf("%d! = %d\n",input_val[i], hasil);
+   }
+}
+
+
 int main(int argc, char *argv[])
 {
    int i, j;
@@ -36,16 +55,21 @@ int main(int argc, char *argv[])
       input_val[i] = atoi(argv[i]);
    }
 
-   sort(argc, input_val);
-
-   //menghitung fakto
+   //sorting
+   int temp;
    for (i=1; i<argc; i++)
    {
-      hasil = 1;
-      for (j=input_val[i]; j>1; j--)
+      for (j=1; j<argc; j++)
       {
-         hasil = hasil * j;
+          if(input_val[j-1] >= input_val[j])                                
+          {
+             temp = input_val[j-1];                                    
+             input_val[j-1] = input_val[j];                                 
+             input_val[j] = temp;                                      
+          }    
       }
-      printf("%d! = %d\n",input_val[i], hasil);
    }
+
+   fakto(input_val, argc);
+
 }
