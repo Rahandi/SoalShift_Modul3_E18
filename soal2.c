@@ -17,7 +17,7 @@ void* pemainpertama(){
 		system("clear");
 		if(b==0){
 			printf("Nama pemain pertama:\n");
-			scanf("%[^\n]s", namesatu);
+			scanf("%s", namesatu);
 			b=1;
 			giliran = 2;
 			continue;
@@ -104,7 +104,7 @@ void* pemainkedua(){
 		system("clear");
 		if(b==0){
 			printf("Nama pemain kedua:\n");
-			scanf("%[^\n]s", namedua);
+			scanf("%s", namedua);
 			b=1;
 			giliran = 1;
 			continue;
