@@ -181,5 +181,20 @@ void* pemainkedua(){
 
 
 int main(){
+	system("clear");
+	pthread_create(&(pemain1), NULL, &pemainpertama, NULL);
+	pthread_create(&(pemain2), NULL, &pemainkedua, NULL);
 
+	while(1){
+		if(status == 1){
+			system("clear");
+			printf("%s menang\n", namesatu);
+			return;
+		}
+		else if(status == 2){
+			system("clear");
+			printf("%s menang\n", namedua);
+			return;
+		}
+	}
 }
