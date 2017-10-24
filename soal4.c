@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <pthread.h>
+#include <unistd.h>
 
 void sort(int n, int argv[])
 {
@@ -17,6 +19,23 @@ void sort(int n, int argv[])
       }
    }
 }
+
+void fakto(int input_val[], int argc)
+{
+   int i, j;
+   //menghitung fakto
+   for (i=1; i<argc; i++)
+   {
+      int hasil = 1;
+      for (j=input_val[i]; j>1; j--)
+      {
+         hasil = hasil * j;
+      }
+      printf("%d! = %d\n",input_val[i], hasil);
+   }
+}
+
+
 int main(int argc, char *argv[])
 {
    int i, j;
@@ -37,15 +56,6 @@ int main(int argc, char *argv[])
    }
 
    sort(argc, input_val);
+   fakto(input_val, argc);
 
-   //menghitung fakto
-   for (i=1; i<argc; i++)
-   {
-      hasil = 1;
-      for (j=input_val[i]; j>1; j--)
-      {
-         hasil = hasil * j;
-      }
-      printf("%d! = %d\n",input_val[i], hasil);
-   }
 }
