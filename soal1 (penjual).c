@@ -18,17 +18,19 @@ int main(){
 		system("clear");
 		printf("1.Tampilkan stock senjata\n2.Tambah stock sejata\n");
 		scanf("%d", &pilihan);
-		if(pil == 1){
+		if(pilihan == 1){
+			system("clear");
 			for(a=0;a<6;a++){
 				if(stok[a]>0){
 					printf("Jumlah %s di stock = %d barang\n", senjata[a], stok[a]);
 				}
-				printf("Press any key to continue...\n");
-				getchar();
-				getchar();
 			}
+			printf("Press any key to continue...\n");
+			getchar();
+			getchar();
 		}
-		if(pil == 2){
+		if(pilihan == 2){
+			system("clear");
 			printf("Format input [Nama barang] [Jumlah stok]\n");
 			scanf("%s %d", senjatanya, &jumlah);
 			for(a=0;a<6;a++){
