@@ -8,7 +8,7 @@ pthread_t tid[100];
 
 void *carikata(void *argv)
 {
-   int jumlah=0;
+   int jumlah=0;//banyaknya
    char line[500], temp[500];
    FILE *filenovel;
    filenovel = fopen ("Novel.txt" , "r");
@@ -22,12 +22,12 @@ void *carikata(void *argv)
    {
        if (fscanf(filenovel, "%s", line) == EOF) break;
 
-       if(strstr(line, argv) != NULL) jumlah++;
-
+       if(strstr(line, argv) != NULL) jumlah++; //case sensitive
 
    }
 
    fclose(filenovel);
+
    printf ("%s : %d\n", temp, jumlah);
 }
 
@@ -39,11 +39,10 @@ int main (int argc, char *argv[])
    for (i=1; i< argc; i++)
    {
       pthread_create(&tid[i], NULL, carikata, (void*)argv[i]);
-      printf ("INI COBA : %s\n", argv[i]); //coba
    }
 
    
-   for(i=0;i<argc;i++)
+   for(i=0; i<argc; i++)
    {
       pthread_join(tid[i], NULL);
    }
