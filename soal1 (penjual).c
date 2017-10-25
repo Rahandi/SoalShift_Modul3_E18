@@ -16,7 +16,7 @@ int main(){
 		int pilihan, a, jumlah;
 		char senjatanya[8];
 		system("clear");
-		printf("1.Tampilkan stock senjata\n2.Tambah stock sejata\n");
+		printf("1.Tampilkan stock senjata\n2.Tambah stock sejata\n3.Exit\n");
 		scanf("%d", &pilihan);
 		if(pilihan == 1){
 			system("clear");
@@ -29,7 +29,7 @@ int main(){
 			getchar();
 			getchar();
 		}
-		if(pilihan == 2){
+		else if(pilihan == 2){
 			system("clear");
 			printf("Format input [Nama barang] [Jumlah stok]\n");
 			scanf("%s %d", senjatanya, &jumlah);
@@ -39,6 +39,13 @@ int main(){
 					break;
 				}
 			}
+		}
+		else if(pilihan == 3){
+			system("clear");
+			printf("EXIT\n");
+			shmdt(stok);
+			shmctl(shmid, IPC_RMID, NULL);
+			break;
 		}
 	}
 	return 0;
