@@ -1,8 +1,11 @@
+#define _GNU_SOURCE //buat strcasestr
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
 #include <unistd.h>
 #include <string.h>
+
 
 pthread_t tid[100];
 
@@ -22,7 +25,7 @@ void *carikata(void *argv)
    {
        if (fscanf(filenovel, "%s", line) == EOF) break;
 
-       if(strstr(line, argv) != NULL) jumlah++; //case sensitive
+       if (strcasestr(line, argv) != NULL) jumlah++; //case insensitive
 
    }
 
