@@ -26,7 +26,7 @@ void* pemainpertama(){
 			printf("%s silahkan pasang ranjau\n", namesatu);
 			printf("berapa ranjau yang akan dipasang? (maks 4 ranjau)\n");
 			scanf("%d", &c);
-			if(c>4){
+			if(c>4 || c<=0){
 				printf("terlalu banyak ranjau yang dipasang, ulangi lagi\n");
 				getchar();
 				getchar();
@@ -44,7 +44,7 @@ void* pemainpertama(){
 			for(a=0;a<c;a++){
 				scanf("%d", &d[a]);
 				d[a] = d[a] - 1;
-				if(d[a]>=16){
+				if(d[a]>=16 || d[a]<0){
 					printf("lubang yang dimasukkan melebihi batas, ulangi lagi\n");
 					getchar();
 					getchar();
@@ -85,7 +85,7 @@ void* pemainpertama(){
 			for(a=0;a<4;a++){
 				scanf("%d", &e[a]);
 				e[a] = e[a] - 1;
-				if(e[a] >= 16){
+				if(e[a] >= 16 || e[a] < 0){
 					printf("lubang melebihi batas, ulangi lagi\n");
 					getchar();
 					getchar();
@@ -149,7 +149,7 @@ void* pemainkedua(){
 			printf("%s silahkan pasang ranjau\n", namedua);
 			printf("berapa ranjau yang akan dipasang? (maks 4 ranjau)\n");
 			scanf("%d", &c);
-			if(c>4){
+			if(c>4 || c<=0){
 				printf("terlalu banyak ranjau yang dipasang, ulangi lagi\n");
 				getchar();
 				getchar();
@@ -167,7 +167,7 @@ void* pemainkedua(){
 			for(a=0;a<c;a++){
 				scanf("%d", &d[a]);
 				d[a] = d[a] - 1;
-				if(d[a]>=16){
+				if(d[a]>=16 || d[a]<0){
 					printf("lubang yang dimasukkan melebihi batas, ulangi lagi\n");
 					getchar();
 					getchar();
@@ -208,7 +208,7 @@ void* pemainkedua(){
 			for(a=0;a<4;a++){
 				scanf("%d", &e[a]);
 				e[a] = e[a] - 1;
-				if(e[a] >= 16){
+				if(e[a] >= 16 || e[a]<0){
 					printf("lubang melebihi batas, ulangi lagi\n");
 					getchar();
 					getchar();
