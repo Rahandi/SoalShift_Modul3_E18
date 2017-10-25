@@ -13,7 +13,7 @@ int main(){
 	int *stok;
 	stok = shmat(shmid, NULL, 0);
 	while(1){
-		int pilihan, a;
+		int pilihan, a, jumlah;
 		char senjatanya[8];
 		system("clear");
 		printf("1.Tampilkan stock senjata\n2.Tambah stock sejata\n");
@@ -28,5 +28,16 @@ int main(){
 				getchar();
 			}
 		}
+		if(pil == 2){
+			printf("Format input [Nama barang] [Jumlah stok]\n");
+			scanf("%s %d", senjatanya, &jumlah);
+			for(a=0;a<6;a++){
+				if(strcmp(senjatanya, senjata[a]) == 0){
+					stok[a] += jumlah;
+					break;
+				}
+			}
+		}
 	}
+	return 0;
 }
